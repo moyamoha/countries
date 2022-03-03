@@ -1,6 +1,5 @@
 # Countries Listed
 
 This application lists all countries of the world in a beautiful and user-friendly user interface.  
-See: [Countries-listed](https://countries-listed.netlify.app)
-  <a href="https://countries-listed.netlify.app" target="_blank">Countries listed</a>
+See: <a href="https://countries-listed.netlify.app" target="_blank">Countries listed</a>  
 API used: [https://restcountries.com/](https://restcountries.com/)
