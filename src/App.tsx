@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import Paper from "@mui/material/Paper";
@@ -34,11 +34,7 @@ function App() {
 				<Paper className="App__content" elevation={0}>
 					<Header></Header>
 					<Routes>
-						<Route
-							path="/"
-							element={<Navigate to={"/home"}></Navigate>}
-						></Route>
-						<Route path="/home" element={<Home></Home>}></Route>
+						<Route path="/" element={<Home></Home>}></Route>
 						<Route
 							path="/:country_name"
 							element={<CountryDetail></CountryDetail>}
