@@ -15,7 +15,7 @@ export default function Index() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const navigateBackToHome = useCallback(() => {
-		navigate("/home");
+		navigate("/");
 		dispatch(showAll());
 	}, [navigate, dispatch]);
 
