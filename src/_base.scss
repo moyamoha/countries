@@ -1,0 +1,30 @@
+$global-font-size: 1.25rem;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+@mixin flex($dir, $jtc, $ai) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $jtc;
+	align-items: $ai;
+}
+
+.App {
+	font-size: $global-font-size;
+	@include flex(column, flex-start, center);
+	border-radius: 0px !important;
+	min-height: 100vh;
+	&__content {
+		@include flex(column, flex-start, flex-start);
+		width: 80%;
+	}
+}
+
+@media (max-width: $screen-md) {
+	.App__content {
+		width: 95%;
+	}
+}

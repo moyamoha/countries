@@ -1,0 +1,9 @@
+.country-link {
+	text-decoration: none;
+	color: rgb(238, 29, 1) !important;
+	transition: text-decoration 0.3s linear;
+}
+
+.country-link:hover {
+	text-decoration: underline;
+}
