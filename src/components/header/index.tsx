@@ -21,7 +21,10 @@ export default function Index() {
 
 	return (
 		<Paper className="header" elevation={0}>
-			<Typography sx={{ cursor: "pointer" }} onClick={navigateBackToHome}>
+			<Typography
+				sx={{ cursor: "pointer", display: "flex", justifyContent: "center" }}
+				onClick={navigateBackToHome}
+			>
 				Countries Listed
 			</Typography>
 			<section className="header__navigation">
