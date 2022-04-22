@@ -1,12 +1,5 @@
 name: Build of the project
-on:
-  push:
-    paths:
-      - '**.ts'
-      - '**.tsx'
-      - '**.html'
-      - '**.scss'
-      - '**.css'
+on: [push, pull_request]
 jobs:
   main:
     runs-on: ubuntu-latest
