@@ -10,7 +10,7 @@ export default function Footer() {
       <Typography>
         Developed by
         <Link
-          href="https://yahyasalimi.netlify.app"
+          href="https://yahyasalimi.com"
           underline="hover"
           color="inherit"
           target="_blank"
