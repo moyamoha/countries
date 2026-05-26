@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../redux/store';
 import type { SelectChangeEvent } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -32,7 +32,7 @@ const sortFunctions: SortFuncs = {
 
 export default function SortOptions() {
   const [sortString, setSortString] = useState<CompareFuncStr>(() => 'byNameAtoZ');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleChange = useCallback(
     (e: SelectChangeEvent) => {

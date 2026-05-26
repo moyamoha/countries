@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../redux/store';
 import { useTheme } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
@@ -10,10 +10,11 @@ import { setFilter } from '../../redux/slices/countries';
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState('');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const theme = useTheme();
 
   const handleSubmit = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function (e: any) {
       e.preventDefault();
       dispatch(setFilter(searchInput));

@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 
-import type { InitialState, Country } from '../../redux/types';
+import type {Country } from '../../redux/types';
 import { addFavorite, removeFavorite } from '../../redux/thunk-actions';
 
 type HeartProps = {
@@ -11,8 +11,8 @@ type HeartProps = {
 };
 
 export default function Heart({ country }: HeartProps) {
-  const favs = useSelector((state: InitialState) => state.favorites);
-  const dispatch = useDispatch<any>();
+  const favs = useAppSelector((state) => state.favorites);
+  const dispatch = useAppDispatch();
 
   function addOrRemoveFav() {
     const content = favs.content;

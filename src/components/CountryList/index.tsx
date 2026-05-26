@@ -1,6 +1,6 @@
 import { useMemo, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import type{ Country, InitialState } from '../../redux/types';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import type { Country } from '../../redux/types';
 import { fetchData, getFavsFromStorage } from '../../redux/thunk-actions';
 import { Container, Paper, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 import '../countryTable/styles.scss';
 
 export default function CountryAsList() {
-  const countries = useSelector((state: InitialState) => state.countries);
-  const favorites = useSelector((state: InitialState) => state.favorites);
+  const countries = useAppSelector((state) => state.countries);
+  const favorites = useAppSelector((state) => state.favorites);
   const filterWord = countries.filterWord;
-  const dispatch = useDispatch<any>();
+  const dispatch = useAppDispatch();
 
   const data = useMemo(() => {
     return (favorites.isShowing ? favorites.content : countries.data).filter(

@@ -1,17 +1,16 @@
 import { useMemo, useEffect } from 'react';
 import { TableBody } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
 
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { fetchData, getFavsFromStorage } from '../../redux/thunk-actions';
 import CountryRow from './CountryRow';
 import type { Country } from '../../redux/types';
-import type { InitialState } from '../../redux/types';
 
 export default function CountryTableBody() {
-  const countries = useSelector((state: InitialState) => state.countries);
-  const favorites = useSelector((state: InitialState) => state.favorites);
+  const countries = useAppSelector((state) => state.countries);
+  const favorites = useAppSelector((state) => state.favorites);
   const filterWord = countries.filterWord;
-  const dispatch = useDispatch<any>();
+  const dispatch = useAppDispatch();
 
   const data = useMemo(() => {
     return (favorites.isShowing ? favorites.content : countries.data).filter(

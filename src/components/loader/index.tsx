@@ -3,11 +3,10 @@ import { useMemo } from 'react';
 import Paper from '@mui/material/Paper';
 
 import './index.scss';
-import { useSelector } from 'react-redux';
-import type { InitialState } from '../../redux/types';
+import { useAppSelector } from '../../redux/store';
 
 export default function Loader() {
-  const mode = useSelector((state: InitialState) => state.ui.mode);
+  const mode = useAppSelector((state) => state.ui.mode);
 
   const colorSx = useMemo(() => {
     return mode === 'dark'

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../redux/store';
 import HomeIcon from '@mui/icons-material/Home';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -12,7 +12,7 @@ import { showAll } from '../../redux/slices/favorites';
 import './header.scss';
 
 export default function Index() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const navigateBackToHome = useCallback(() => {
     navigate('/');
