@@ -1,0 +1,38 @@
+@use '../base';
+
+.intro {
+  text-align: center;
+  margin-bottom: 5rem;
+  &__header {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: -1rem;
+  }
+
+  &__description {
+    font-size: 3rem;
+    font-weight: 600; 
+  }
+}
+
+.country-page {
+  width: 100%;
+  @include base.flex(column, space-between, center);
+  min-height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  gap: 30px;
+}
+
+@media (max-width: base.$screen-sm) {
+  .intro {
+    margin-bottom: 5rem;
+    &__header {
+      font-size: 4rem;
+    }
+  
+    &__description {
+      font-size: 2rem;
+    }
+  }
+}

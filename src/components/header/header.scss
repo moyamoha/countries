@@ -1,0 +1,14 @@
+@use '../../base';
+
+.header {
+  @include base.flex(row, flex-start, center);
+  height: auto;
+  padding: 0 !important;
+  width: 100%;
+  height: 80px;
+  &__navigation {
+    margin-left: auto;
+     @include base.flex(row, flex-start, center);
+     gap: 20px;
+  }
+}

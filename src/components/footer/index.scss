@@ -1,0 +1,9 @@
+@use '../../base';
+
+.footer {
+  font-size: calc(base.$global-font-size - 0.25rem);
+  @include base.flex(row, center, center);
+  padding: 10px;
+  width: 100% !important;
+  margin-top: 5rem;
+}

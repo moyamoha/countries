@@ -1,0 +1,38 @@
+.pillar {
+	animation: load 800ms linear;
+	animation-iteration-count: 10;
+	animation-direction: alternate;
+	animation-direction: normal;
+	display: inline !important;
+	width: 15px;
+	height: 30px;
+	/*background-color: chartreuse !important;*/
+	border-radius: 0 !important;
+	&:not(:last-child) {
+		margin-right: 5px;
+	}
+}
+
+.one {
+	animation-delay: 0ms;
+}
+
+.two {
+	animation-delay: 150ms;
+}
+
+.three {
+	animation-delay: 300ms;
+}
+
+@keyframes load {
+	0% {
+		transform: scaleY(100%);
+	}
+	50% {
+		transform: scaleY(200%);
+	}
+	100% {
+		transform: scaleY(100%);
+	}
+}
