@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Country } from '../redux/types';
+import type { Country } from '../redux/types';
 
 export default function useCountries() {
   const [countries, setCountries] = useState<Country[]>([]);

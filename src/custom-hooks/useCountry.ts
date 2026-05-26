@@ -1,6 +1,6 @@
 // This hook is used to fetch one specific country
 import { useState, useEffect } from 'react';
-import { Country } from '../redux/types';
+import type { Country } from '../redux/types';
 
 export default function useCountry(countryName: string) {
   const [country, setCountry] = useState<Country>();
