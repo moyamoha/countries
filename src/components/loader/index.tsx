@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
+import { useAppSelector } from '../../redux/store';
 
 import Paper from '@mui/material/Paper';
 
 import './index.scss';
-import { useAppSelector } from '../../redux/store';
 
 export default function Loader() {
   const mode = useAppSelector((state) => state.ui.mode);
