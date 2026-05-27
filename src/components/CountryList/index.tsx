@@ -44,7 +44,7 @@ export default function CountryAsList() {
               key={c.name}
             >
               <img
-                src={c.flags.png || c.flags.svg}
+                src={ c.flags.svg || c.flags.png }
                 alt={`flag of ${c.name}`}
                 style={{ width: '40px', height: '30px' }}
               />

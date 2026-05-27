@@ -8,12 +8,18 @@ export default function useCountry(countryName: string) {
 
   useEffect(() => {
     const abortController = new AbortController();
-    fetch(`https://restcountries.com/v3.1/name/${countryName}`, {
+    fetch(`https://restcountries.com/v2/name/${countryName}`, {
       method: 'GET',
       signal: abortController.signal,
     })
       .then((res) => res.json())
-      .then((data) => setCountry(data))
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setCountry(data[0]);
+        } else {
+          setError('Country not found');
+        }
+      })
       .catch((err) => {
         setError(err);
       });
