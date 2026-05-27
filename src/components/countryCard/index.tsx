@@ -13,7 +13,6 @@ type IndexPropsType = {
 };
 
 export default function Index({ country }: IndexPropsType) {
-  console.log(country)
   const languages = useMemo(() => {
     return country.languages ? country.languages.map((lang) => lang.name) : ['N/A'];
   }, [country.languages]);

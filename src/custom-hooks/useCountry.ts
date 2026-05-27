@@ -1,4 +1,3 @@
-// This hook is used to fetch one specific country
 import { useState, useEffect } from 'react';
 import type { Country } from '../redux/types';
 
@@ -7,8 +6,6 @@ export default function useCountry(countryName: string) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    setError('');
-    setCountry(undefined as unknown as Country);
     const abortController = new AbortController();
     fetch(`https://restcountries.com/v2/name/${countryName}`, {
       method: 'GET',
