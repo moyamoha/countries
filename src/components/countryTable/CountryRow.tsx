@@ -16,7 +16,7 @@ export default function CountryRow({ country }: CountryRowProps) {
     <TableRow>
       <TableCell>
         <img
-          src={country.flags.png}
+          src={ country.flags.svg || country.flags.png }
           alt={`flag of ${country.name}`}
           style={{ width: '40px', height: '30px' }}
         />

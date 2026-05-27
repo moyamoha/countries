@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react';
 import type { Country } from '../redux/types';
 
 export default function useCountry(countryName: string) {
-  const [country, setCountry] = useState<Country>();
+  const [country, setCountry] = useState<Country>(undefined as unknown as Country);
   const [error, setError] = useState('');
 
   useEffect(() => {
+    console.log('fetching country data: ', countryName);
+    setError('');
+    setCountry(undefined as unknown as Country);
     const abortController = new AbortController();
     fetch(`https://restcountries.com/v2/name/${countryName}`, {
       method: 'GET',
@@ -21,7 +24,9 @@ export default function useCountry(countryName: string) {
         }
       })
       .catch((err) => {
-        setError(err);
+          if (err?.name !== 'AbortError') {
+            setError(err?.message ?? 'An error occurred');
+          }
       });
 
     return () => {
