@@ -7,7 +7,6 @@ export default function useCountry(countryName: string) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    console.log('fetching country data: ', countryName);
     setError('');
     setCountry(undefined as unknown as Country);
     const abortController = new AbortController();

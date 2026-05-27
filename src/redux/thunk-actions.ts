@@ -15,7 +15,7 @@ export function fetchData() {
       const data = await response.json();
       dispatch(setData(data));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 }

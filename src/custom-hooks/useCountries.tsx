@@ -17,7 +17,6 @@ export default function useCountries() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCountries(data);
       })
       .catch((err) => {
